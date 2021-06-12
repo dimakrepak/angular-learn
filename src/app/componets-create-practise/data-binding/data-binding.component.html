@@ -1,12 +1,29 @@
 <!-- String  interpolation -->
-<p>{{ "server" }} with id {{ taskId }} is {{ getTaskStatus() }}</p>
+<!-- <p>{{ "server" }} with id {{ taskId }} is {{ getTaskStatus() }}</p> -->
 
 <!-- Property Binding & Event Binding -->
-<button
-class="btn btn-primary"
-[disabled]="alloweNewTask"
-(click)="handleCreateTask()"
+<!-- <label>Task Name {{ taskName }}</label> -->
+<!-- <div> -->
+<!-- <input
+    type="text"
+    class="form-control"
+    [value]="taskName"
+    (input)="handleUpdateTaskName($event)"
+  /> -->
+<!-- <input type="text" class="form-control" [(ngModel)]="taskName" /> -->
+<!-- </div> -->
+<!-- <button
+  class="btn btn-primary"
+  [disabled]="alloweNewTask"
+  (click)="handleCreateTask()"
 >
-Add task
+  Add task
+</button> -->
+<!-- <p>{{ taskCreationStatus }}</p> -->
+
+<input type="text" [(ngModel)]="username" />
+<p>{{ username }}</p>
+<button (click)="handleCreateUsername()" [disabled]="username ? false : true">
+  Create User
 </button>
-<p>{{ taskCreationStatus }}</p>
+<h3>{{ usernameCreationStatus }}</h3>
