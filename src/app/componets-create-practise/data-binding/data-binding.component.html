@@ -22,8 +22,14 @@
 <!-- <p>{{ taskCreationStatus }}</p> -->
 
 <input type="text" [(ngModel)]="username" />
-<p>{{ username }}</p>
 <button (click)="handleCreateUsername()" [disabled]="username ? false : true">
   Create User
 </button>
-<h3>{{ usernameCreationStatus }}</h3>
+
+<!--Build in directives  -->
+<p *ngIf="userCreated; else noUser">
+  User created successfully,username is {{ user }}
+</p>
+<ng-template #noUser>
+  <p>No user created</p>
+</ng-template>

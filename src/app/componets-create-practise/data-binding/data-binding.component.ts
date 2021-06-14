@@ -1,14 +1,20 @@
-import {Component, OnInit} from "@angular/core";
+import { Component, OnInit } from '@angular/core';
 
-@Component({selector: "app-data-binding", templateUrl: "./data-binding.component.html", styleUrls: ["./data-binding.component.css"]})
+@Component({
+  selector: 'app-data-binding',
+  templateUrl: './data-binding.component.html',
+  styleUrls: ['./data-binding.component.css'],
+})
 export class DataBindingComponent implements OnInit {
   // taskId: number = 15;
   // taskStatus: string = "offline";
   // alloweNewTask: boolean = true;
   // taskCreationStatus = "No tasks";
   // taskName: string = "";
-  username: string = "";
-  usernameCreationStatus = "No User";
+  username: string = '';
+  usernameCreationStatus = 'No User';
+  userCreated = false;
+  user: string = '';
 
   constructor() {
     // setTimeout(() => {
@@ -27,7 +33,8 @@ export class DataBindingComponent implements OnInit {
   //   this.taskName = (<HTMLInputElement>e.target).value;
   // }
   handleCreateUsername() {
-    this.usernameCreationStatus = "User Created Succefully " + this.username;
-    this.username = "";
+    this.userCreated = true;
+    this.user = this.username;
+    this.username = '';
   }
 }
