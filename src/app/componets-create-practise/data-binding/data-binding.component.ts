@@ -16,6 +16,7 @@ export class DataBindingComponent implements OnInit {
   userCreated = false;
   user: string = '';
   userStatus: string = 'offline';
+  users = ['1', '2', '3', '4'];
 
   constructor() {
     // setTimeout(() => {
@@ -36,6 +37,7 @@ export class DataBindingComponent implements OnInit {
   // }
   handleCreateUsername() {
     this.userCreated = true;
+    this.users.push(this.username);
     this.user = this.username;
     this.username = '';
   }
