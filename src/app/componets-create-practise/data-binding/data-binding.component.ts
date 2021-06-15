@@ -15,11 +15,13 @@ export class DataBindingComponent implements OnInit {
   usernameCreationStatus = 'No User';
   userCreated = false;
   user: string = '';
+  userStatus: string = 'offline';
 
   constructor() {
     // setTimeout(() => {
     //   this.alloweNewTask = false;
     // }, 2000);
+    this.userStatus = Math.random() > 0.5 ? 'online' : 'offline';
   }
   ngOnInit(): void {}
 
@@ -36,5 +38,9 @@ export class DataBindingComponent implements OnInit {
     this.userCreated = true;
     this.user = this.username;
     this.username = '';
+  }
+  getColor() {
+    //two ways to add color with condition
+    return this.userStatus === 'online' ? 'green' : 'red';
   }
 }

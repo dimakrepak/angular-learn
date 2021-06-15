@@ -20,7 +20,9 @@
   Add task
 </button> -->
 <!-- <p>{{ taskCreationStatus }}</p> -->
-
+<p [ngStyle]="{ color: userStatus === 'online' ? 'green' : 'red' }">
+  user {{ user }} is {{ userStatus }}
+</p>
 <input type="text" [(ngModel)]="username" />
 <button (click)="handleCreateUsername()" [disabled]="username ? false : true">
   Create User
