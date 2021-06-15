@@ -41,3 +41,12 @@
 <ul>
   <li *ngFor="let u of users">{{ u }}</li>
 </ul>
+<button (click)="handleToggle()">Display Details</button>
+<p *ngIf="toggle">Details</p>
+<h3>timestamps</h3>
+<p
+  *ngFor="let timestamp of toggleTimeStamp; let i = index"
+  [ngStyle]="{ color: i >= 5 ? 'blue' : 'green' }"
+>
+  {{ timestamp }}
+</p>

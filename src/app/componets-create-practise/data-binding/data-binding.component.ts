@@ -17,6 +17,8 @@ export class DataBindingComponent implements OnInit {
   user: string = '';
   userStatus: string = 'offline';
   users = ['1', '2', '3', '4'];
+  toggle = false;
+  toggleTimeStamp = [];
 
   constructor() {
     // setTimeout(() => {
@@ -44,5 +46,11 @@ export class DataBindingComponent implements OnInit {
   getColor() {
     //two ways to add color with condition
     return this.userStatus === 'online' ? 'green' : 'red';
+  }
+  handleToggle() {
+    const timeElapsed = Date.now();
+    const today = new Date(timeElapsed);
+    this.toggleTimeStamp.push(today.toUTCString());
+    this.toggle = !this.toggle;
   }
 }
