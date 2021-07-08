@@ -8,5 +8,6 @@
 <!--Binding to custom properties -->
 <app-servers
   *ngFor="let serverElement of serverElements"
-  [element]="serverElement"
+  [sElement]="serverElement"
 ></app-servers>
+<app-custom-events (serverCreated)="onServerAdded($event)"></app-custom-events>
